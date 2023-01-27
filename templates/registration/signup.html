@@ -1,0 +1,16 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+  <h2>Créer un compte utlisateur</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"></div>
+        <button type="submit" class="btn btn-primary btn-lg">Valider</button>
+    </div>
+  </form>
+  <p><a href="{% url 'login' %}">Formulaire de connexion.</a></p>
+{% endblock %}
