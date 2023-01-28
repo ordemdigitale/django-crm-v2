@@ -143,17 +143,16 @@ CART_SESSION_ID = 'cart'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'dlionelmederic@gmail.com'
-EMAIL_HOST_PASSWORD = 'rjvtmvfqemmztsvm'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'dlionelmederic@gmail.com'
+DEFAULT_FROM_EMAIL = ''
 
 # Celery Configuration options
 
-CELERY_BROKER_URL = 'amqps://pedcuicl:KteO7K8ObqNc7o7y-nYw_MqmK4Si17Ij@crow.rmq.cloudamqp.com/pedcuicl'
+CELERY_BROKER_URL = ''
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
-#CELERY_TIMEZONE = "Australia/Tasmania"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
