@@ -1,9 +1,10 @@
 from django.db import models
 from apps.shop.models import Product
+from apps.customers.models import Customer
 
 
 class Order(models.Model):
-    name = models.CharField(max_length=50)
+    customer = models.ForeignKey(Customer, related_name='orders', null=True, blank=True, on_delete=models.SET_NULL)
     email = models.EmailField()
     address = models.CharField(max_length=200, null=True, blank=True)
     phone_number = models.CharField(max_length=80, null=True, blank=True)

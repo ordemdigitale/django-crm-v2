@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u==)c+cl2$u7nmknp=gq00!8kzf(mqs(3r0$zm%zg&1w5pr$f='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'apps.accounts',
     'apps.shop',
     'apps.orders',
+    'apps.customers',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -129,6 +130,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Account no settings
+ACCOUNT_NUMBER_START_FROM = 20003
 
 # Auth settings
 
