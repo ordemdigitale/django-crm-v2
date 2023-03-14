@@ -1,1 +1,5 @@
-# CRM Project in Django v3.2
+# Gestion Grand Compte
+
+### Built With
+
+* [![Django]]
