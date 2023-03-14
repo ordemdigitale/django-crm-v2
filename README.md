@@ -2,4 +2,4 @@
 
 ### Built With
 
-* [![Django]]
+* Django v3.2
