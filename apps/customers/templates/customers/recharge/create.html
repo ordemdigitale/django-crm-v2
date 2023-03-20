@@ -1,0 +1,77 @@
+{% extends "dashboard_base.html" %}
+{% block title %} Recharger {% endblock %}
+{% block content %}
+{% load widget_tweaks %}
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Recharger Le Compte De {{ customer.name }}</h1>
+    <a class="small" href="{% url 'shop:cart_detail' %}">Retour au panier</a>
+</div>
+<!-- Page Content -->
+<div class="row px-5">
+    
+    <div class="col-lg-8">
+    <!-- Customer Info Card -->
+        <div class="card shadow mb-4">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold text-primary">Renseigner Le Montant De La Recharge</h6>
+            </div>
+            <div class="card-body">
+                <form method="post" class="order-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <!--// amount field -->
+                        {% render_field form.amount type="number" class="form-control" id="CustomerRechargeAmount" placeholder="Amount" %}
+                    </div>
+                    <input type="submit" value="Valider" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!--
+    <div class="col-lg-4">
+     Cart Info Card 
+        <div class="card mb-4 py-3 border-bottom-secondary">
+            <div class="card-body">
+                <h4 class="text-primary">Commande en cours</h4>
+                <ul>
+                {% for item in cart %}
+                    <li>
+                        {{ item.quantity }}x {{ item.product.name }}:
+                        <span>£ {{ item.total_price }}</span>
+                    </li>
+                {% endfor %}
+                </ul>
+                <span class="font-weight-bold text-dark">Total: £ {{ cart.get_total_price }}</span>
+            </div>
+        </div>
+    </div>
+    -->
+
+</div>
+{% endblock %}
+
+<!-- Order Info 
+<div class="order-info">
+    <h3>Commande en cours</h3>
+    <ul>
+    {% for item in cart %}
+        <li>
+        {{ item.quantity }}x {{ item.product.name }}
+        <span>${{ item.total_price }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+    <p>Total: ${{ cart.get_total_price }}</p>
+</div>
+
+
+
+
+<form method="post" class="order-form">
+    {{ form.as_p }}
+    <p><input type="submit" value="Place order"></p>
+    {% csrf_token %}
+</form>
+-->

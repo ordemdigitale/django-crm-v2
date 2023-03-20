@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Product
+from apps.customers.models import Customer
 from django.views.decorators.http import require_POST
 from .cart import Cart
 from .forms import CartAddProductForm
@@ -8,13 +9,15 @@ from .forms import CartAddProductForm
 
 @login_required
 def shop_index(request):
-    #products = Product.objects.all()
     # Count the number of products in the databse
     product_count = Product.objects.count()
+    # Count the number of customers in the database
+    customer_count = Customer.objects.count()
 
     context = {
     #    'products': products,
         'product_count': product_count,
+        'customer_count': customer_count,
     }
 
     return render(request, 'shop/shop_index.html', context)
