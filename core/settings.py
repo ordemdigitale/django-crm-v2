@@ -1,13 +1,13 @@
 import os
 import dj_database_url
 from pathlib import Path
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 # Environment variables settings
-
+load_dotenv()
 
 # Railway.app settings
-DATABASE_URL = ''
+DATABASE_URL = 'postgresql://postgres:Q1LiXip8syqLGJMMQ0eZ@containers-us-west-38.railway.app:5591/railway'
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u==)c+cl2$u7nmknp=gq00!8kzf(mqs(3r0$zm%zg&1w5pr$f='
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
