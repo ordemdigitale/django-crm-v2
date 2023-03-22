@@ -21,19 +21,19 @@
                 {% csrf_token %}
                     <div class="form-group">
                         <!--// name field -->
-                        {% render_field form.name type="text" class="form-control" id="CustomerOrderName" placeholder="Nom" %}
+                        {% render_field form.name type="text" class="form-control" id="CustomerOrderName" placeholder="Nom du client" %}
                     </div>
                     <div class="form-group">
                         <!--// email field -->
-                        {% render_field form.email type="email" class="form-control" id="CustomerOrderName" placeholder="Email" %}
+                        {% render_field form.customer type="email" class="form-control" id="CustomerOrderEmail" placeholder="Email du client" %}
                     </div>
                     <div class="form-group">
                         <!--// address field -->
-                        {% render_field form.address type="text" class="form-control" id="CustomerOrderName" placeholder="Adresse" %}
+                        {% render_field form.address type="text" class="form-control" id="CustomerOrderAddress" placeholder="Adresse du client" %}
                     </div>
                     <div class="form-group">
                         <!--// phone number field -->
-                        {% render_field form.phone_number type="text" class="form-control" id="CustomerOrderName" placeholder="Numéro de téléphone" %}
+                        {% render_field form.phone_number type="text" class="form-control" id="CustomerOrderPhone" placeholder="Contact du client" %}
                     </div>
                     <input type="submit" value="Valider la commande" class="btn btn-primary">
                 </form>
@@ -61,27 +61,3 @@
 
 </div>
 {% endblock %}
-
-<!-- Order Info 
-<div class="order-info">
-    <h3>Commande en cours</h3>
-    <ul>
-    {% for item in cart %}
-        <li>
-        {{ item.quantity }}x {{ item.product.name }}
-        <span>${{ item.total_price }}</span>
-        </li>
-    {% endfor %}
-    </ul>
-    <p>Total: ${{ cart.get_total_price }}</p>
-</div>
-
-
-
-
-<form method="post" class="order-form">
-    {{ form.as_p }}
-    <p><input type="submit" value="Place order"></p>
-    {% csrf_token %}
-</form>
--->

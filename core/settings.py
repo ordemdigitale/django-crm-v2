@@ -159,16 +159,17 @@ CART_SESSION_ID = 'cart'
 # Email Backend
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = ''
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
 # Celery Configuration options
 
-CELERY_BROKER_URL = 'redis://default:Vf2v762NOttIr67Myt8O@containers-us-west-24.railway.app:7292'
+#CELERY_BROKER_URL = 'redis://default:Vf2v762NOttIr67Myt8O@containers-us-west-24.railway.app:7292'
+CELERY_BROKER_URL = 'amqps://pedcuicl:KteO7K8ObqNc7o7y-nYw_MqmK4Si17Ij@crow.rmq.cloudamqp.com/pedcuicl'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TASK_TRACK_STARTED = True

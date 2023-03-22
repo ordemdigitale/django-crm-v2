@@ -5,7 +5,7 @@ from apps.customers.models import Customer
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, related_name='orders', null=True, blank=True, on_delete=models.SET_NULL)
-    email = models.EmailField()
+    name = models.CharField(max_length=100, null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
     phone_number = models.CharField(max_length=80, null=True, blank=True)
     paid = models.BooleanField(default=False)

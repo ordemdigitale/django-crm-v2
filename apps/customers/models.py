@@ -6,7 +6,6 @@ from django.urls import reverse
 class Customer(models.Model):
     name = models.CharField(max_length=50, db_index=True)
     email = models.EmailField(max_length=50, unique=True)
-    #balance = models.DecimalField(default=0, max_digits=5, decimal_places=2)
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
 
@@ -14,7 +13,7 @@ class Customer(models.Model):
         ordering = ('name',)
     
     def get_absolute_url(self):
-        return reverse('customers:customer_detail', args=[self.pk]) # If error, change to self.id
+        return reverse('customers:customer_detail', args=[self.pk])
     
     @property
     def balance(self):

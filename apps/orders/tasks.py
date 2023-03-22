@@ -12,12 +12,12 @@ def order_created(order_id):
     successfully created.
     """
     order = Order.objects.get(id=order_id)
-    subject = f'Order #{order.id}'
-    message = f'Dear {order.name},\n\n' \
-                f'You have successfully placed an order.' \
-                f'Your order ID is {order.id}.'
+    subject = f'Commande N°{order.id}'
+    message = f'{order.name},\n\n' \
+                f'Vous avez passé votre commande avec succès. \n' \
+                f'Le numéro de la commande est le suivant {order.id}.'
     mail_sent = send_mail(subject,
                             message,
                             'settings.DEFAULT_FROM_EMAIL', # the sender / from address
-                            [order.email]) # recipient address
+                            [order.customer]) # recipient address
     return mail_sent
