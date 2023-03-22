@@ -1,8 +1,13 @@
 import os
+import dj_database_url
 from pathlib import Path
 #from dotenv import load_dotenv
 
 # Environment variables settings
+
+
+# Railway.app settings
+DATABASE_URL = 'postgresql://postgres:Q1LiXip8syqLGJMMQ0eZ@containers-us-west-38.railway.app:5591/railway'
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -75,12 +80,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+"""
+DATABASES = {
+    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800)
 }
 
 
@@ -164,3 +173,4 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
+
