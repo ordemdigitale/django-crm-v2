@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 # Railway.app settings
-DATABASE_URL = 'postgresql://postgres:Q1LiXip8syqLGJMMQ0eZ@containers-us-west-38.railway.app:5591/railway'
+DATABASE_URL = ''
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
