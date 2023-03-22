@@ -159,7 +159,7 @@ DEFAULT_FROM_EMAIL = ''
 
 # Celery Configuration options
 
-CELERY_BROKER_URL = ''
+CELERY_BROKER_URL = 'redis://default:Vf2v762NOttIr67Myt8O@containers-us-west-24.railway.app:7292'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TASK_TRACK_STARTED = True
